@@ -14,33 +14,34 @@
 #define KC_NUTD LSFT(KC_NUHS)
 #define KC_BIG3 LCTL(LGUI(LALT(KC_NO)))
 
+#define XC_UP LALT(LGUI(KC_LBRC))
+#define XC_DOWN LALT(LGUI(KC_RBRC))
+#define XC_LEFT LGUI(KC_LBRC)
+#define XC_RIGHT LGUI(KC_RBRC)
+
 #define BIG_UP M(0)
 #define BIG_DOWN M(1)
-#define SW_FUNC M(2)
-#define SW_VAR M(3)
-#define SW_LET M(4)
-#define SW_PRVT M(5)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = KEYMAP(
     KC_ESC,  KC_1,     KC_2,  KC_3,    KC_4,    KC_5,    KC_MINS,
     KC_TAB,  KC_Q,     KC_W,  KC_E,    KC_R,    KC_T,    LGUI(KC_LBRC),
     KC_LCTL, KC_A,     KC_S,  KC_D,    KC_F,    KC_G,
-    KC_LSFT, KC_Z,     KC_X,  KC_C,    KC_V,    KC_B,    KC_TAB,
-    KC_BIG3, KC_BIG3,  LY_NAVI, KC_LALT,   KC_LGUI,
+    KC_LSFT, KC_Z,     KC_X,  KC_C,    KC_V,    KC_B,    LGUI(LCTL(KC_SPC)),
+    KC_GRAVE,KC_QUOTE, KC_HASH,KC_LALT,   KC_LGUI,
     /*-*/    /*-*/     /*-*/  /*-*/    /*-*/    KC_MUTE, KC_VOLD,
     /*-*/    /*-*/     /*-*/  /*-*/    /*-*/    /*-*/    KC_VOLU,
-    /*-*/    /*-*/     /*-*/  /*-*/    KC_BSPC, LT(SWIFT,KC_SPC), LY_SYMB,
+    /*-*/    /*-*/     /*-*/  /*-*/    KC_BSPC, GUI_T(KC_SPC), MO(SYMB),
     //
     //
     /*-*/    KC_PLUS,  KC_6,  KC_7,    KC_8,    KC_9,    KC_0,       KC_ESC,
-    /*-*/ LGUI(KC_RBRC),KC_Y,  KC_U,    KC_I,    KC_O,    KC_P,       KC_MINS,
-    /*-*/    /*-*/     KC_H,  KC_J,    KC_K,    KC_L,    KC_SCLN,    KC_ENT,
+    /*-*/ LGUI(KC_RBRC),KC_Y, KC_U,    KC_I,    KC_O,    KC_P,       KC_MINS,
+    /*-*/    /*-*/     KC_H,  KC_J,    KC_K,    KC_L,    KC_SCLN,    KC_RCTL,
     /*-*/ LGUI(KC_SPC),KC_N,  KC_M,    KC_COMM, KC_DOT,  KC_SLSH,    KC_RSFT,
-    /*-*/    /*-*/     /*-*/  KC_RGUI, KC_RALT, LY_SYMB, KC_HYPR,    KC_HYPR,
+    /*-*/    /*-*/     /*-*/  KC_RGUI, KC_RALT, LY_SYMB, KC_HYPR,    MO(SWIFT),
     KC_MPRV, KC_MNXT,
     KC_MPLY,
-    LY_NAVI, LT(SWIFT,KC_SPC),  KC_ENT
+    MO(NAVI), GUI_T(KC_SPC),  KC_ENT
   ),
   [SYMB] = KEYMAP(
     KC_TRNS, KC_EXLM,  KC_AT  , LSFT(KC_3),  KC_DLR , KC_PERC, KC_UNDS,
@@ -60,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*-*/    /*-*/    /*-*/    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS,
     KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS
+    MO(SWIFT), KC_TRNS, KC_TRNS
   ),
   [NAVI] = KEYMAP(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -70,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     /*-*/    /*-*/    /*-*/    /*-*/    /*-*/    KC_TRNS, KC_TRNS,
     /*-*/    /*-*/    /*-*/    /*-*/    /*-*/    /*-*/    KC_TRNS,
-    /*-*/    /*-*/    /*-*/    /*-*/    KC_TRNS, KC_TRNS, KC_TRNS,
+    /*-*/    /*-*/    /*-*/    /*-*/    KC_TRNS, KC_TRNS, MO(SWIFT),
     //
     //
     /*-*/    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -85,8 +86,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [SWIFT] = KEYMAP(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, SW_FUNC, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, SW_VAR,  KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     /*-*/    /*-*/    /*-*/    /*-*/    /*-*/    KC_TRNS, KC_TRNS,
     /*-*/    /*-*/    /*-*/    /*-*/    /*-*/    /*-*/    KC_TRNS,
@@ -94,8 +95,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //
     //
     /*-*/    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RESET,
-    /*-*/    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, SW_PRVT, KC_TRNS,
-    /*-*/    /*-*/    KC_TRNS, KC_TRNS, KC_TRNS, SW_LET,  KC_TRNS, KC_TRNS,
+    /*-*/    KC_TRNS, KC_TRNS, KC_TRNS, XC_UP,   KC_TRNS, KC_TRNS, KC_TRNS,
+    /*-*/    /*-*/    KC_TRNS, XC_LEFT, XC_DOWN, XC_RIGHT,KC_TRNS, KC_TRNS,
     /*-*/    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     /*-*/    /*-*/    /*-*/    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS,
@@ -146,51 +147,6 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
             END);
         }
         break;
-        case 2: // this would trigger when you hit a key mapped as M(0)
-          if (record->event.pressed) {
-            return MACRO(
-              I(2),
-              T(F),
-              T(U),
-              T(N),
-              T(C),
-              END);
-          }
-          break;
-          case 3: // this would trigger when you hit a key mapped as M(0)
-            if (record->event.pressed) {
-              return MACRO(
-                I(2),
-                T(V),
-                T(A),
-                T(R),
-                END);
-            }
-            break;
-            case 4: // this would trigger when you hit a key mapped as M(0)
-              if (record->event.pressed) {
-                return MACRO(
-                  I(2),
-                  T(L),
-                  T(E),
-                  T(T),
-                  END);
-              }
-              break;
-              case 5: // this would trigger when you hit a key mapped as M(0)
-                if (record->event.pressed) {
-                  return MACRO(
-                    I(2),
-                    T(P),
-                    T(R),
-                    T(I),
-                    T(V),
-                    T(A),
-                    T(T),
-                    T(E),
-                    END);
-                }
-                break;
 }
 return MACRO_NONE;
 };
