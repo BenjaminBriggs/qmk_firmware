@@ -40,8 +40,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*-*/    /*-*/     /*-*/   /*-*/    KC_BSPC, KC_SPC,  MO(SYMB),
     //
     //
-    /*-*/    KC_PLUS,  KC_6,  KC_7,    KC_8,    KC_9,    KC_0,       KC_ESC,
-    /*-*/ HYPR(KC_F21),KC_Y, KC_U,    KC_I,    KC_O,    KC_P,       KC_MINS,
+    /*-*/    KC_PLUS,  KC_6,  KC_7,    KC_8,    KC_9,    KC_0,       KC_SYSTEM_SLEEP,
+    /*-*/ HYPR(KC_F21),KC_Y,  KC_U,    KC_I,    KC_O,    KC_P,       KC_MINS,
     /*-*/    /*-*/     KC_H,  KC_J,    KC_K,    KC_L,    KC_SCLN,    KC_RCTL,
     /*-*/ LGUI(KC_SPC),KC_N,  KC_M,    KC_COMM, KC_DOT,  KC_SLSH,    KC_RSFT,
     /*-*/    /*-*/     /*-*/  KC_RGUI, KC_RALT, KC_LBRC, KC_RBRC,    MO(SWIFT),
